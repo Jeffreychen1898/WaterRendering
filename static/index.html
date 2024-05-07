@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Water Rendering</title>
+		<script src="/math.js"></script>
+		<script src="/Ardime.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<div class="main-container">
+
+			<div class="canvas-container">
+				<canvas id="canvas" width="800" height="600"></canvas>
+			</div>
+
+			<div class="slider-container">
+				<div class="slider-tab-nav-container">
+					<button class="slider-tab-nav-btn selected-nav" data-tab="general-tab">General</button>
+					<button class="slider-tab-nav-btn" data-tab="water-tab">Water</button>
+					<button class="slider-tab-nav-btn" data-tab="land-tab">Land</button>
+					<button class="slider-tab-nav-btn" data-tab="sun-position-tab">Sun Position</button>
+					<button class="slider-tab-nav-btn" data-tab="">Tilemap</button>
+				</div>
+				<div class="slider-tab-body">
+					<div class="slider-tab-container target-tab" id="general-tab">
+						<h1>General</h1>
+						<p>Gamma Correction Value</p>
+						<div class="slider-pair">
+							<input data-slider="gamma-correction" class="slider-helper-input" id="gamma-correction-input">
+							<input data-input="gamma-correction-input" class="slider" id="gamma-correction" type="range" step="0.001" min="1" max="5">
+						</div>
+						<p>Sun Height</p>
+						<div class="slider-pair">
+							<input data-slider="sun-height" class="slider-helper-input" id="sun-height-input">
+							<input data-input="sun-height-input" class="slider" id="sun-height" type="range" step="0.001" min="100" max="5000">
+						</div>
+					</div>
+
+					<div class="slider-tab-container" id="water-tab">
+						<h1>Water</h1>
+						<p>Water Reflectivity</p>
+						<div class="slider-pair">
+							<input data-slider="water-reflectivity" class="slider-helper-input" id="water-reflectivity-input">
+							<input data-input="water-reflectivity-input" class="slider" id="water-reflectivity" type="range" step="0.001" min="0" max="1">
+						</div>
+						<p>Water Roughness</p>
+						<div class="slider-pair">
+							<input data-slider="water-roughness" class="slider-helper-input" id="water-roughness-input">
+							<input data-input="water-roughness-input" class="slider" id="water-roughness" type="range" step="0.001" min="0" max="1">
+						</div>
+						<p>Water Metallic</p>
+						<div class="slider-pair">
+							<input data-slider="water-metallic" class="slider-helper-input" id="water-metallic-input">
+							<input data-input="water-metallic-input" class="slider" id="water-metallic" type="range" step="0.001" min="0" max="1">
+						</div>
+						<p>Water Ambient</p>
+						<div class="slider-pair">
+							<input data-slider="water-ambient" class="slider-helper-input" id="water-ambient-input">
+							<input data-input="water-ambient-input" class="slider" id="water-ambient" type="range" step="0.001" min="0" max="1">
+						</div>
+						<p>Water Speed</p>
+						<div class="slider-pair">
+							<input data-slider="water-speed" class="slider-helper-input" id="water-speed-input">
+							<input data-input="water-speed-input" class="slider" id="water-speed" type="range" step="0.001" min="0" max="1">
+						</div>
+					</div>
+
+					<div class="slider-tab-container" id="land-tab">
+						<h1>Land</h1>
+						<p>Grass Reflectivity</p>
+						<div class="slider-pair">
+							<input data-slider="grass-reflectivity" class="slider-helper-input" id="grass_reflectivity-input">
+							<input data-input="grass-reflectivity-input" class="slider" id="grass-reflectivity" type="range" step="0.001" min="0" max="1">
+						</div>
+						<p>Grass Roughness</p>
+						<div class="slider-pair">
+							<input data-slider="grass-roughness" class="slider-helper-input" id="grass-roughness-input">
+							<input data-input="grass-roughness-input" class="slider" id="grass-roughness" type="range" step="0.001" min="0" max="10">
+						</div>
+						<p>Grass Metallic</p>
+						<div class="slider-pair">
+							<input data-slider="grass-metallic" class="slider-helper-input" id="grass-metallic-input">
+							<input data-input="grass-metallic-input" class="slider" id="grass-metallic" type="range" step="0.001" min="0" max="500">
+						</div>
+						<p>Grass Ambient</p>
+						<div class="slider-pair">
+							<input data-slider="grass-ambient" class="slider-helper-input" id="grass-ambient-input">
+							<input data-input="grass-ambient-input" class="slider" id="grass-ambient" type="range" step="0.001" min="0" max="500">
+						</div>
+					</div>
+
+					<div class="slider-tab-container" id="sun-position-tab">
+						<h1>Sun Position</h1>
+						<div class="trackpad" id="sun-trackpad" data-mousedown="false" data-x="0" data-y="0">
+							<div class="controller"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="module" src="script.js"></script>
+	</body>
+</html>

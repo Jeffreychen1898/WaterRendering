@@ -1,0 +1,103 @@
+* {
+	border: none;
+	outline: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #BBBBBB;
+}
+
+input {
+	border: 1px solid black;
+}
+
+button {
+	cursor: pointer;
+}
+
+.main-container {
+	display: flex;
+}
+
+.main-container > * {
+	padding: 5px 10px;
+}
+
+.slider-container {
+	flex: 1;
+}
+
+.slider-tab-nav-container {
+	display: flex;
+}
+.slider-tab-nav-container .slider-tab-nav-btn {
+	flex: 1;
+	padding: 10px 0;
+	background-color: #444444;
+	color: #BBBBBB;
+	transition: all 0.3s ease;
+}
+
+.slider-tab-nav-container .selected-nav {
+	background-color: #888888;
+	color: #222222;
+}
+
+.slider-tab-nav-container .slider-tab-nav-btn:hover {
+	background-color: #888888;
+	color: #222222;
+}
+
+.slider-tab-body .slider-tab-container {
+	display: none;
+}
+
+.slider-tab-body .target-tab {
+	display: block;
+}
+
+.slider-tab-container h1 {
+	text-align: center;
+}
+
+.slider-tab-container p {
+	margin: 5px 0;
+}
+
+.slider-tab-container .slider-pair {
+	display: flex;
+}
+
+.slider-tab-container .slider-pair > * {
+	margin: 0 10px;
+}
+
+.slider-tab-container .slider-pair .slider-helper-input {
+	width: 50px;
+	padding: 5px 10px;
+}
+
+.slider-tab-container .slider-pair .slider {
+	flex: 1;
+}
+
+.trackpad {
+	position: relative;
+	width: 60%;
+	height: 0;
+	padding-bottom: 60%;
+	background-color: green;
+	margin: 50px;
+}
+
+.controller {
+	position: absolute;
+	background-color: orange;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	transform: translate(-50%, -50%);
+}
